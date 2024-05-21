@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';  // CSSファイルをインポート
+import UserForm from './components/UserForm';
+import UserList from './components/UserList';
+import './App.css';
 
 function App() {
     const [users, setUsers] = useState([]);
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [editing, setEditing] = useState(false);
     const [currentUser, setCurrentUser] = useState({});
 
@@ -16,14 +15,10 @@ function App() {
             .catch(error => console.error(error));
     }, []);
 
-    const addUser = () => {
-        const newUser = { name, email, password };
+    const addUser = (newUser) => {
         axios.post('http://localhost:8080/api/users', newUser)
             .then(response => setUsers([...users, response.data]))
             .catch(error => console.error(error));
-        setName('');
-        setEmail('');
-        setPassword('');
     };
 
     const deleteUser = (id) => {
@@ -37,63 +32,38 @@ function App() {
     const editUser = (user) => {
         setEditing(true);
         setCurrentUser(user);
-        setName(user.name);
-        setEmail(user.email);
-        setPassword(user.password)
     };
 
-    const updateUser = () => {
-        axios.put(`http://localhost:8080/api/users/${currentUser.id}`, { name, email, password })
+    const updateUser = (updatedUser) => {
+        axios.put(`http://localhost:8080/api/users/${currentUser.id}`, updatedUser)
             .then(response => {
                 setUsers(users.map(user => (user.id === currentUser.id ? response.data : user)));
                 setEditing(false);
                 setCurrentUser({});
-                setName('');
-                setEmail('');
-                setPassword('');
             })
             .catch(error => console.error(error));
+    };
+
+    const clearForm = () => {
+        setCurrentUser({});
+        setEditing(false);
     };
 
     return (
         <div className="container">
             <h1>登録</h1>
-            <div>
-                <input
-                    type="text"
-                    placeholder="名前"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="メールアドレス"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="パスワード"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                {editing ? (
-                    <button onClick={updateUser}>更新</button>
-                ) : (
-                    <button onClick={addUser}>追加</button>
-                )}
-            </div>
-            <ul>
-                {users.map(user => (
-                    <li key={user.id}>
-                        {user.name} - {user.email} - {user.password}
-                        <div>
-                            <button onClick={() => editUser(user)}>更新</button>
-                            <button className="delete" onClick={() => deleteUser(user.id)}>削除</button>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+            <UserForm 
+                addUser={addUser} 
+                updateUser={updateUser} 
+                editing={editing} 
+                currentUser={currentUser} 
+                clearForm={clearForm}
+            />
+            <UserList 
+                users={users} 
+                editUser={editUser} 
+                deleteUser={deleteUser}
+            />
         </div>
     );
 }
