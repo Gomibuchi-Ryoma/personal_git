@@ -5,6 +5,9 @@ import App from './App';
 import Admin from './components/AdminDashBoard'
 import UserForm from './components/UserForm';
 import UpdateForm from './components/UpdateForm';
+import Login from './components/Login';
+import LoginSuccsess from './components/solo/LoginSuccess';
+import AdminLogin from './components/AdminLogin';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -17,6 +20,9 @@ root.render(
               <Route path="/admindashboard" element={<Admin />} />
               <Route path="/userform" element={<UserForm />} />
               <Route path="/updateform" element={<UpdateForm />} />
+              <Route path="/login" element={<Login />} />
+              <Route path='/loginSuccess' element={<LoginSuccsess />} />
+              <Route path='/adminLogin' element={<AdminLogin />} />
           </Routes>
       </Router>
   </React.StrictMode>
