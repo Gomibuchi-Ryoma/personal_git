@@ -37,6 +37,7 @@ public class UserController {
 	}
 	
 	//新規登録
+	
 	@PostMapping
 	public User createUser(@RequestBody User user) {
 		return userService.createUser(user);
