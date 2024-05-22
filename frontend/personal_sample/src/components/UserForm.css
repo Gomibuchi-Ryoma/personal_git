@@ -45,3 +45,16 @@
 .user-form button:hover {
   background-color: #0056b3;
 }
+
+
+.password-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* 必要に応じて調整 */
+}
+
+.password-toggle-button {
+  margin-left: 10px; /* ボタンと入力フィールドの間隔 */
+  margin-bottom: 25px;
+}
+
