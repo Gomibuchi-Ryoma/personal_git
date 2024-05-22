@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -55,5 +57,12 @@ public class UserController {
 	public void deleteUser(@PathVariable Long id) {
 		userService.deleteUser(id);
 	}
+	
+	@PostMapping("/log")
+	public Optional<User> getUserByEmailAndPassword(@RequestBody Map<String, String> loginRequest) {
+        String email = loginRequest.get("email");
+        String password = loginRequest.get("password");
+        return userService.getUserByEmailAndPassword(email, password);
+    }
 	
 }
