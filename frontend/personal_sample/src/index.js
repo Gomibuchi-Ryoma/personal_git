@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
 import App from './App';
+import Admin from './components/AdminDashBoard'
+import UserForm from './components/UserForm';
+import UpdateForm from './components/UpdateForm';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -11,8 +13,10 @@ root.render(
   <React.StrictMode>
       <Router>
           <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/register" element={<App />} />
+              <Route path="/" element={<App />} />
+              <Route path="/admindashboard" element={<Admin />} />
+              <Route path="/userform" element={<UserForm />} />
+              <Route path="/updateform" element={<UpdateForm />} />
           </Routes>
       </Router>
   </React.StrictMode>
