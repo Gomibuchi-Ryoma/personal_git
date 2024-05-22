@@ -23,26 +23,32 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	//全検索
 	@GetMapping("/")
 	public List<User> getUserAll() {
 		return userService.getUserAll();
 	}
 	
+	//idで取得
 	@GetMapping("/{id}")
 	public User getUserById(@PathVariable Long id) {
 		return userService.getUserById(id);
 	}
 	
+	//新規登録
 	@PostMapping
 	public User createUser(@RequestBody User user) {
 		return userService.createUser(user);
 	}
 	
+	//更新
 	@PutMapping("/{id}")
 	public User updateUser(@PathVariable Long id,@RequestBody User user) {
 		return userService.updateUser(id, user);
 	}
 	
+	
+	//削除
 	@DeleteMapping("/{id}")
 	public void deleteUser(@PathVariable Long id) {
 		userService.deleteUser(id);
