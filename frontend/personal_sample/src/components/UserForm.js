@@ -9,17 +9,8 @@ function UserForm() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
-
-    // useEffect(() => {
-    //     if (editing) {
-    //         setName(currentUser.name);
-    //         setEmail(currentUser.email);
-    //         setPassword(currentUser.password);
-    //     } else {
-    //         console.log(editing);
-    //         clearForm();
-    //     }
-    // }, [editing, currentUser]);
+    //パスワードの表示保持
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,6 +29,11 @@ function UserForm() {
             .catch(error => console.error(error));
     };
 
+    // 表示・非表示変更
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <div className='user-form'>
             <h1>登録</h1>
@@ -53,12 +49,17 @@ function UserForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-                type="password"
-                placeholder="パスワード"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="password-input-container">
+                <input
+                    type={showPassword ? "text" : "password"} // パスワードの表示状態によってタイプを切り替える
+                    placeholder="パスワード"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button className="password-toggle-button" onClick={togglePasswordVisibility}>
+                    {showPassword ? "非表示" : "表示"}
+                </button>
+            </div>
             <button onClick={handleSubmit}>
                 追加
             </button>
