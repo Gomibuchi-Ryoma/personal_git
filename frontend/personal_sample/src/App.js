@@ -11,8 +11,12 @@ function App() {
                 <Link to="/userform">
                     <button className="action-button-user">新規登録</button>
                 </Link>
+
+                <Link to="/login">
                 <button className="action-button-user">ログイン</button>
-                <Link to="/admindashboard">
+                </Link>
+                
+                <Link to="/adminLogin">
                     <button className="action-button-admin">管理者ログイン</button>
                 </Link>
             </div>
