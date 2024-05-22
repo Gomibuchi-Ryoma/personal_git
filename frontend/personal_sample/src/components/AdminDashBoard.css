@@ -1,0 +1,81 @@
+/* .admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+} */
+
+.admin-dashboard {
+    background: #fff;
+    padding: 40px 60px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-dashboard h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.admin-dashboard .user-list {
+    margin-top: 20px;
+}
+
+.admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-dashboard th, .admin-dashboard td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    width: 300px;
+}
+
+.admin-dashboard th {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+}
+
+.admin-dashboard td {
+    text-align: left;
+}
+
+.admin-dashboard tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.admin-dashboard tr:hover {
+    background-color: #ddd;
+}
+
+.admin-dashboard button.edit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.admin-dashboard button.edit:hover {
+    background-color: #45a049;
+}
+
+.admin-dashboard button.delete {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.admin-dashboard button.delete:hover {
+    background-color: #e53935;
+}
