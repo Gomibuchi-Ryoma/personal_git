@@ -1,29 +1,41 @@
 .home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* ビューポート全体の高さに設定 */
   text-align: center;
-  margin-top: 20px;
-}
-
-.home-container h1 {
-  font-size: 2em;
-  color: #333;
-  margin-bottom: 20px;
 }
 
 .button-container {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* ボタン間の間隔を設定 */
 }
 
-.action-button {
-  padding: 10px 20px;
+.action-button-user {
+  width: 200px; /* ボタンの幅を設定 */
+  padding: 10px;
+  margin: 5px 0;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 4px;
   background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.action-button-admin {
+  width: 200px; /* ボタンの幅を設定 */
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #189a2c;
   color: white;
-  font-size: 1em;
-  transition: background-color 0.2s;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .action-button:hover {
