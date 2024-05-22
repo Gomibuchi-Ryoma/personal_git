@@ -9,11 +9,11 @@ function App() {
             <h1>ホーム</h1>
             <div className="button-container">
                 <Link to="/userform">
-                    <button className="action-button">新規登録</button>
+                    <button className="action-button-user">新規登録</button>
                 </Link>
-                <button className="action-button">ログイン</button>
+                <button className="action-button-user">ログイン</button>
                 <Link to="/admindashboard">
-                    <button className="action-button">管理者ログイン</button>
+                    <button className="action-button-admin">管理者ログイン</button>
                 </Link>
             </div>
         </div>
