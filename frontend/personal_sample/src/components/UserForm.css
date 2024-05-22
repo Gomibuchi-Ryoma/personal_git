@@ -1,60 +1,64 @@
 .user-form {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  max-width: 400px;
-  margin: 20px auto;
+  width: 300px; /* フォーム全体の幅 */
+  margin: 0 auto; /* 中央揃え */
   margin-top: 150px;
-  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
 }
 
 .user-form h1 {
-  font-size: 1.5em;
+  font-size: 24px;
+  text-align: center;
   margin-bottom: 20px;
-  color: #333;
 }
 
 .user-form input {
-  width: calc(100% - 20px);
+  width: calc(100% - 20px); /* 幅を調整 */
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.2s;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-.user-form input:focus {
-  border-color: #007bff;
+.user-form .password-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-form .password-input-container input {
+  flex: 1; /* 入力フィールドが残りのスペースを占有 */
+}
+
+.user-form .password-input-container .password-toggle-button {
+  width: 60px; /* ボタンの幅を指定 */
+  margin-left: 10px;
+  padding: 8px; /* 必要に応じて調整 */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: black;
 }
 
 .user-form button {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 4px;
   background-color: #007bff;
-  color: white;
-  transition: background-color 0.2s;
-  margin-top: 10px;
-  font-size: 1em;
-  width: calc(100% - 20px);
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .user-form button:hover {
   background-color: #0056b3;
 }
-
-
-.password-input-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; /* 必要に応じて調整 */
-}
-
-.password-toggle-button {
-  margin-left: 10px; /* ボタンと入力フィールドの間隔 */
-  margin-bottom: 25px;
-}
-
