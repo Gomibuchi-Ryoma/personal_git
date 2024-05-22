@@ -49,7 +49,7 @@ function UserForm() {
 
     return (
         <div className='user-form'>
-            <h1>登録</h1>
+            <h1>新規登録</h1>
             <input
                 type="text"
                 placeholder="名前"
