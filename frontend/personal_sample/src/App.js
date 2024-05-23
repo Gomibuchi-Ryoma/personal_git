@@ -6,7 +6,7 @@ function App() {
 
     return (
         <div className="home-container">
-            <h1>ホーム</h1>
+            <h1>みんなで自己紹介しよう？？</h1>
             <div className="button-container">
                 <Link to="/userform">
                     <button className="action-button-user">新規登録</button>
