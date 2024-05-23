@@ -8,6 +8,8 @@ import UpdateForm from './components/UpdateForm';
 import Login from './components/Login';
 import LoginSuccsess from './components/solo/LoginSuccess';
 import AdminLogin from './components/AdminLogin';
+import CreateCard from './components/solo/CreateCard';
+import HistoryCard from './components/solo/HistoryCard';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -23,6 +25,8 @@ root.render(
               <Route path="/login" element={<Login />} />
               <Route path='/loginSuccess' element={<LoginSuccsess />} />
               <Route path='/adminLogin' element={<AdminLogin />} />
+              <Route path='/createCard' element={<CreateCard/>} />
+              <Route path='/historyCard' element={<HistoryCard/>} />
           </Routes>
       </Router>
   </React.StrictMode>
