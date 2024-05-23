@@ -52,12 +52,6 @@ public class Card {
     @Size(max = 255, message = "得意なことは255文字以下で入力してください")
     private String strong;
 
-    @NotBlank(message = "MBTIタイプは必須です")
-    @Pattern(
-        regexp = "^[A-Z]{4}$",
-        message = "有効なMBTIタイプを入力してください（例: ENFJ）"
-    )
-    private String MBTI;
 
     @NotBlank(message = "好きなスポーツは必須です")
     @Size(max = 100, message = "好きなスポーツは100文字以下で入力してください")
