@@ -37,7 +37,6 @@ public class CardService {
 			card.setHobby_url(cardDetails.getHobby_url());
 			card.setFood(cardDetails.getFood());
 			card.setStrong(cardDetails.getStrong());
-			card.setMBTI(cardDetails.getMBTI());
 			card.setSports(cardDetails.getSports());
 			card.setSex(cardDetails.getSex());
 			return cardRepository.save(card);
